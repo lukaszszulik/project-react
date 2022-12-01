@@ -8,14 +8,14 @@ import { useState } from 'react';
 const SearchForm = () => {
     const [searchString, setSearchString] = useState('');
     const dispatch = useDispatch();
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(updateSearchString(searchString));
-        setSearchString('');
+         setSearchString('');
     }
     return(
-        <form className={styles.searchForm}>
-            <TextInput placeholder="Search…" />
+        <form className={styles.searchForm} onSubmit={handleSubmit}>
+            <TextInput placeholder="Search…" onChange ={ (e) => setSearchString(e.target.value)} />
             <Button>
             <span className="fa fa-search" />
 

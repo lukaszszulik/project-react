@@ -22,7 +22,8 @@ const reducer = (state, action) => {
       return { ...state, columns: [...state.columns, {...action.payload, id: shortid()}]}
       case 'ADD_CARD':
         return {...state, cards: [...state.cards, {id: shortid(), columnId: action.payload.columnId, title: action.payload.title}]}
-        case 'UPDATE_SEARCHSTRING':
+        case 'UPDATE_SEARCHING':
+          console.log('action', action.payload);
           return{...state, searchString: action.payload};
       default:
   return state;
