@@ -5,6 +5,7 @@ import About from './components/About/About';
 import Favorite from './components/Favorite/Favorite';
 import { Routes, Route } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import List from './components/List/List';
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
               <Route path="/about" element={<About/>} />
               <Route path="/favorite" element={<Favorite/>}/>
               <Route path="*" element={<ErrorBoundary />} />
+              <Route path="/list" element={<List />} />
+              <Route path="/list/:listId" element={<List />} />
           </Routes>
         </Container>
       </main>
