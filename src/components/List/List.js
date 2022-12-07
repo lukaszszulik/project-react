@@ -18,6 +18,7 @@ const List = () => {
 
 
   if(!listData) return <Navigate to="/" />
+  console.log(columns);
 
 return (
   <div className={styles.list}>
@@ -34,7 +35,7 @@ return (
     <section className={styles.columns}>
       {columns.map(column => <Column key={column.id} {...column}  /> )}
     </section>
-    <ColumnForm />
+    <ColumnForm listId={listId} />
   </div>
   
 );
